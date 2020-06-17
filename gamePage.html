@@ -14,43 +14,50 @@
         <!--Custom CSS-->
         <link rel="stylesheet" href="gamePage.css">
 
+        <!--Font Awesome Icons-->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
         <!--Page Title-->
         <title>Tic-Tac-Toe</title>
     </head>
     <body style="position: relative; top: 15vh;">
         <div class="container-fluid">
+            <div class="row" style="position: absolute;">
+                <div class="col-2 display-4" id="back">
+                    <i class="far fa-arrow-alt-circle-left"></i>
+                </div>
+            </div>
             <div class="row d-flex align-items-center justify-content-center text-center">
                 <div class="col-10 col-sm-6 col-lg-4 d-flex justify-content-between align-items-center d-block">
-                    <div class="row w-100 h-100 no-gutters px-sm-0 px-md-2 px-lg-5 mx-md-4 border pt-5 pb-4 shadow grid">
-
+                    <div class="row w-100 h-100 no-gutters px-4 px-md-4 px-lg-5 mx-md-2 mx-lg-4 border pt-5 pb-4 shadow grid">
                         <!--Game Grid-->
 
-                        <div class="col-4 py-2 cell" id="top-start">
-                            
+                        <div class="col-4 py-2 px-2 cell hover-highlight" id="top-start">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="top-middle">
-                            
+                        <div class="col-4 py-2 px-2 cell hover-highlight" id="top-middle">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="top-end">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="top-end">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="center-start">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="center-start">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="center-middle">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="center-middle">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="center-end">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="center-end">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="bottom-start">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="bottom-start">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="bottom-middle">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="bottom-middle">
+                            <div></div>
                         </div>
-                        <div class="col-4 py-2 cell" id="bottom-end">
-                            
+                        <div class="col-4 p-4 cell hover-highlight" id="bottom-end">
+                            <div></div>
                         </div>
 
                         <!--Current Scores-->
@@ -78,7 +85,7 @@
                         <div class="col-4 text-center mt-3">
                             <div class="row">
                                 <div class="col-12 small">
-                                    CPU
+                                    P2
                                 </div>
                                 <div class="col-12 h3" id="p2">
                                     0
