@@ -1,5 +1,5 @@
 window.onload = function(){
-    if(localStorage.getItem('continue') === null){
+    if(localStorage.getItem('continue') === 'save' && localStorage.getItem('saved_data') === '[]'){
         document.querySelector('#continue').style.display = 'none'
     }
     else if(localStorage.getItem('continue') === 'save') {
@@ -12,10 +12,14 @@ document.getElementById('continue').onclick = function () {
 }
 
 document.getElementById('single').onclick = function () {
+    localStorage.setItem('continue', '')
+    localStorage.setItem('saved_data', '[]')
     location.href = 'gamePage.html'
 }
 
 document.getElementById('double').onclick = function () {
+    localStorage.setItem('continue', '')
+    localStorage.setItem('saved_data', '[]')
     location.href = 'gamePage.html'
 }
 
