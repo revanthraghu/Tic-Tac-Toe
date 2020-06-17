@@ -94,15 +94,29 @@ var grid = (function(){
     function ties() {
         return tie
     }
+    //set tie count
+    function setTies(tie_count) {
+        tie = tie_count
+    }
 
     //return current count of p1 wins
     function p1s() {
         return p1
     }
 
+    //set p1 count
+    function setP1s(p1_count) {
+        p1 = p1_count
+    }
+
     //return current count of p2 wins
     function p2s() {
         return p2
+    }
+
+    //set p2 count
+    function setP2s(p2_count) {
+        p2 = p2_count
     }
 
     //resets the grid, saved_data and count
@@ -117,7 +131,7 @@ var grid = (function(){
         turn = 'o'
     }
 
-    return {fillCell, filledCount, reset, ties, p1s, p2s}
+    return {fillCell, filledCount, reset, ties, p1s, p2s, setTies, setP1s, setP2s}
 })()
 
 //grid click eventListener
@@ -153,13 +167,19 @@ window.onload = function (){
         localStorage.setItem('continue', 'save')
 
         //set tie count
-        document.getElementById('tie').textContent = localStorage.getItem('tie')
+        var tie = localStorage.getItem('tie')
+        document.getElementById('tie').textContent = tie
+        grid.setTies(Number(tie))
 
         //set p1 count
-        document.getElementById('p1').textContent = localStorage.getItem('p1')
+        var p1 = localStorage.getItem('p1')
+        document.getElementById('p1').textContent = p1
+        grid.setP1s(Number(p1))
 
         //set p2 count
-        document.getElementById('p2').textContent = localStorage.getItem('p2')
+        var p2 = localStorage.getItem('p2')
+        document.getElementById('p2').textContent = p2
+        grid.setP2s(Number(p2))
 
         //go through each saved cell data and refill the grid
         JSON.parse(localStorage.getItem('saved_data')).forEach(function(cell){
