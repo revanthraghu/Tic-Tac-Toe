@@ -34,6 +34,38 @@ function gameWon() {
     }
 }
 
+//Single player P2 move logic 
+function makeP2move() {
+
+    //array of cells
+    var cells = ['#top-start','#top-middle', '#top-end', '#center-start', '#center-middle', '#center-end', '#bottom-start', '#bottom-middle', '#bottom-end']
+
+    //cell to be filled by cpu player
+    var cell_to_fill;
+
+    //random number generator
+    function rnd(max) {
+        return Math.floor(Math.random() * Math.floor(max))
+    }
+
+    for(var cell = 0; cell < cells.length; cell++) {
+        var cell_name = document.querySelector(cells[cell]).getAttribute('name')
+        if(cell_name === 'x' || cell_name === 'o') {
+            //do nothing
+        }
+        else {
+            cell_to_fill = document.querySelector(cells[cell])
+            var random_no1 = rnd(9)
+            var random_no2 = rnd(9)
+            if( random_no1 === random_no2 || random_no1 === random_no2 || random_no1 === random_no2 || random_no1 === random_no2 ) {
+                break
+            }
+        }
+    }
+    setTimeout(function(){
+        grid.fillCell(cell_to_fill)
+    }, 300)  
+}
 
 //Function to manipulate grid and give info about games played
 var grid = (function(){
@@ -66,8 +98,16 @@ var grid = (function(){
             game_data.push([cell.id, cell.querySelector('div').classList])
             turn = 'o'
         }
+        //remove hover highlight from filled cell
         cell.classList.remove('hover-highlight')
+
+        //update localStorage with filled cell data
         localStorage.setItem('saved_data', JSON.stringify(game_data))
+
+        //if single player make the next move
+        if(localStorage.getItem('player') === 'single' && turn === 'x' && !gameWon()) {
+            makeP2move()
+        }
 
         //if all cells filled and game not won then updates tie count
         if(count === 9 && !gameWon()) {
