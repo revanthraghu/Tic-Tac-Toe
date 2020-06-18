@@ -48,6 +48,7 @@ function makeP2move() {
         return Math.floor(Math.random() * Math.floor(max))
     }
 
+    //select a cell randomly
     for(var cell = 0; cell < cells.length; cell++) {
         var cell_name = document.querySelector(cells[cell]).getAttribute('name')
         if(cell_name === 'x' || cell_name === 'o') {
@@ -62,6 +63,7 @@ function makeP2move() {
             }
         }
     }
+    
     setTimeout(function(){
         grid.fillCell(cell_to_fill)
     }, 300)  
@@ -105,7 +107,7 @@ var grid = (function(){
         localStorage.setItem('saved_data', JSON.stringify(game_data))
 
         //if single player make the next move
-        if(localStorage.getItem('player') === 'single' && turn === 'x' && !gameWon()) {
+        if(localStorage.getItem('player') === 'single' && turn === 'x' && !gameWon() && count <9) {
             makeP2move()
         }
 
@@ -235,5 +237,8 @@ window.onload = function (){
             //set class name to show font awesome icon
             document.querySelector('#'+ cell[0] +' > div').setAttribute('class', cell[1][0]+' '+cell[1][1]+' '+cell[1][2]+' '+cell[1][3]+' '+cell[1][4]+' '+cell[1][5]+' '+cell[1][6]+' '+cell[1][7])
         })
+    }
+    if(localStorage.getItem('player') === 'single') {
+        document.querySelector('#p2').previousElementSibling.textContent = 'CPU'
     }
 }
