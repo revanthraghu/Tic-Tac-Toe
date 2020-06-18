@@ -6,5 +6,6 @@ The project has 2 pages:
 2. The game page with the game grid, win and tie counts and a back button.
 
 ## Resources used
-1. The project uses customized bootstrap and paper CSS frameworks and another custom CSS file to achieve the desired look. 3. 2. Javascript is used to manipuplate the grid and update game scores.
+1. The project uses customized bootstrap and paper CSS frameworks and another custom CSS file to achieve the desired look.
+2. Javascript is used to manipuplate the grid and update game scores.
 3. LocalStorage is used to store previous unfinished game data to load again if the player wants to coontinue with the previous game.
