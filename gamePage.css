@@ -10,6 +10,7 @@ html, body {
 #back > i:hover {
     -webkit-transform: translate3d(0,2px,0);
     transform: translate3d(0,2px,0);
+    text-shadow: 2px 5px 5px rgba(0,0,0,.5);
     cursor: pointer;
 }
 
