@@ -12,3 +12,14 @@ The project has 2 pages:
 
 ## Project screenshots
 
+### Landing Page
+![](landing-page.png)
+
+### Single Player Mode
+![](single-player-game-page.png)
+
+### Continue Screen
+![](continue.png)
+
+### Updated Player Stats
+![](game-won.png)
