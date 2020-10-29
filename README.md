@@ -1,6 +1,6 @@
-# masai-sprint-4
-## Tic-Tac-Toe Overview
-A Tic-tac-toe game designed to be as minimalist as possible with only the most necessary elements present.
+# Tic-Tac-Toe
+A Tic-tac-toe game designed to be as minimalist as possible with only the most necessary elements present. [Visit Website](https://paper-tic-tac-toe.netlify.app/)
+## Overview
 The project has 2 pages:
 1. The landing page with 1 player and 2 player option.
 2. The game page with the game grid, win and tie counts and a back button.
